@@ -1,0 +1,6 @@
+{
+  "name": "Tuyết Rơi Giữa Mùa Hạ",
+  "description": "Tuyết lạc thiên sơn, tình chôn vạn dặm ❄️ - Trang hồ sơ nhân vật, tiểu sử và cốt truyện với hiệu ứng tuyết rơi nhẹ nhàng.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

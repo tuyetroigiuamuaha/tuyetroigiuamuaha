@@ -1,0 +1,226 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #fad2e1; /* Hồng nude phấn dịu mắt, tương phản nổi bật và êm dịu trên nền tối */
+    background: linear-gradient(135deg, #070913 0%, #110f24 35%, #161230 70%, #0a1124 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  body.dark, .dark body {
+    color: #fad2e1;
+    background: linear-gradient(135deg, #070913 0%, #110f24 35%, #161230 70%, #0a1124 100%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, .font-serif-novel {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: #ffdce7;
+  }
+
+  .dark h1, .dark h2, .dark h3, .dark .font-serif-novel {
+    color: #ffdce7;
+  }
+
+  .font-script-poetic {
+    font-family: 'Alex Brush', cursive;
+  }
+}
+
+/* Nude pink text utility classes with soothing contrast on dark background */
+.text-nude-title {
+  color: #ffdce7;
+}
+
+.text-nude-body {
+  color: #fad2e1;
+}
+
+.text-nude-subtle {
+  color: #f5b8cd;
+}
+
+.text-nude-muted {
+  color: #e29bb3;
+}
+
+/* Custom delicate scrollbars for mysterious night atmosphere */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 18, 38, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(244, 166, 189, 0.5);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 207, 232, 0.75);
+}
+
+/* Glassmorphism cards - Mystical Dark Mode with soft pink rim glow */
+.glass-panel {
+  background: rgba(18, 20, 39, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(244, 166, 189, 0.25);
+  box-shadow: 0 12px 36px -10px rgba(0, 0, 0, 0.7), 0 0 15px rgba(244, 114, 182, 0.12);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  transform: translateY(-3px);
+  background: rgba(26, 28, 54, 0.96);
+  border-color: rgba(249, 168, 212, 0.45);
+  box-shadow: 0 20px 42px -12px rgba(0, 0, 0, 0.85), 0 0 25px rgba(244, 114, 182, 0.22);
+}
+
+/* Drop-cap for story chapters */
+.novel-dropcap::first-letter {
+  font-family: 'Playfair Display', serif;
+  float: left;
+  font-size: 3.5rem;
+  line-height: 0.85;
+  padding-top: 4px;
+  padding-right: 10px;
+  padding-bottom: 2px;
+  color: #ffd0e0;
+  font-weight: 700;
+  text-shadow: 0 0 12px rgba(244, 114, 182, 0.7), 0 0 24px rgba(253, 164, 175, 0.5);
+}
+
+/* Soft shimmer animation */
+@keyframes softShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #ffd7e5 0%, #a78bfa 50%, #ffd7e5 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: softShimmer 8s linear infinite;
+}
+
+/* Welcome Screen custom animations */
+@keyframes welcomeGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-welcome-bg {
+  background: linear-gradient(-45deg, #040510, #130424, #031024, #08021c);
+  background-size: 400% 400%;
+  animation: welcomeGradient 22s ease infinite;
+}
+
+@keyframes welcomeShine {
+  0% { left: -100%; }
+  100% { left: 125%; }
+}
+
+.animate-welcome-shine {
+  animation: welcomeShine 2.5s ease-in-out infinite;
+}
+
+/* --- LIGHT MODE CUSTOM THEME --- */
+body.light, .light body {
+  color: #8c435c; /* hồng nude đậm không chói mắt */
+  background: linear-gradient(135deg, #e6f4fe 0%, #fae8ff 50%, #fdf2f8 100%); /* xanh pastel pha hồng pastel dịu mắt */
+  background-attachment: fixed;
+}
+
+.light h1, .light h2, .light h3, .light .font-serif-novel {
+  color: #581c32 !important; /* màu hồng mận chín đậm đà, sang trọng */
+}
+
+.light .glass-panel {
+  background: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(140, 67, 92, 0.18) !important;
+  box-shadow: 0 12px 30px -10px rgba(140, 67, 92, 0.08), 0 0 15px rgba(140, 67, 92, 0.03) !important;
+}
+
+.light .glass-panel-hover:hover {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(140, 67, 92, 0.35) !important;
+  box-shadow: 0 20px 40px -12px rgba(140, 67, 92, 0.15), 0 0 25px rgba(140, 67, 92, 0.08) !important;
+}
+
+/* Light Mode Global Text Color Overrides */
+.light .text-\[\#fad2e1\], 
+.light .text-\[\#fce4ec\], 
+.light .text-\[\#f5c2d3\], 
+.light .text-purple-300, 
+.light .text-rose-200, 
+.light .text-pink-300,
+.light .text-pink-200,
+.light .text-\[\#fbcfe8\] {
+  color: #8c435c !important;
+}
+
+.light .text-\[\#ffdce7\], 
+.light .text-\[\#fed7e2\] {
+  color: #581c32 !important;
+}
+
+.light .text-\[\#d89cad\], 
+.light .text-\[\#f5b8cd\], 
+.light .text-\[\#f8c5d6\], 
+.light .text-purple-300\/70 {
+  color: #a25672 !important;
+}
+
+/* Background Overrides */
+.light .bg-slate-900, 
+.light .bg-slate-950, 
+.light .bg-slate-900\/90, 
+.light .bg-slate-950\/80, 
+.light .bg-slate-950\/70,
+.light .bg-slate-950\/95 {
+  background-color: rgba(255, 255, 255, 0.72) !important;
+}
+
+.light .bg-purple-950\/40, 
+.light .bg-purple-950\/30, 
+.light .bg-pink-950\/70, 
+.light .bg-rose-950\/80,
+.light .bg-purple-950 {
+  background-color: rgba(254, 242, 246, 0.6) !important;
+}
+
+/* Border Overrides */
+.light .border-purple-900\/50, 
+.light .border-rose-900\/50, 
+.light .border-rose-900\/60, 
+.light .border-purple-900\/60, 
+.light .border-purple-900\/40,
+.light .border-purple-950 {
+  border-color: rgba(140, 67, 92, 0.15) !important;
+}
+
+.light .shimmer-text {
+  background: linear-gradient(90deg, #8c435c 0%, #db2777 50%, #8c435c 100%) !important;
+  background-size: 200% auto !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+
+/* Safe keeping of button readability */
+.light .bg-\[\#842244\] {
+  background-color: #842244 !important;
+  color: #ffffff !important;
+}
+.light .bg-\[\#842244\]:hover {
+  background-color: #9c2b53 !important;
+}
